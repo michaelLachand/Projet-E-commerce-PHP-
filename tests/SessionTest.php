@@ -20,4 +20,15 @@ class SessionTest extends TestCase
        $this->assertFalse($session->isStarted());
     }
 
+    /** @test */
+    public function a_session_can_be_started()
+    {
+        $session = new Session();
+
+        $sessionStatus = $session->start();
+
+        $this->assertTrue($session->isStarted());
+        $this->assertTrue($sessionStatus);
+    }
+
 }
